@@ -2,6 +2,7 @@ import React from 'react'
 import './GoalList.css';
 
 const GoalList = ({goals}) => {
+  console.log(goals)
   return (
     <div>
         <ul className='goal-list'>

@@ -4,9 +4,9 @@ import "./GoalsApp.css";
 
 const GoalsApp = () => {
   const goals = [
-    { cg1: 1, text: "Finish the course" },
-    { cg2: 2, text: "Help other people to learn along the way" },
-    { cg3: 3, text: "Go on to change the world" },
+    { id: 'cg1', text: "Finish the course" },
+    { id: 'cg2', text: "Help other people to learn along the way" },
+    { id: 'cg3', text: "Go on to change the world" },
   ];
 
   return (
