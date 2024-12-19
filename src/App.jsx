@@ -1,9 +1,10 @@
 import "./App.css";
+import GoalsApp from "./components/goals-app/GoalsApp";
 
 function App() {
   return (
     <>
-      <h1 className="goals-header">Course Goals</h1>
+      <GoalsApp />
     </>
   );
 }
