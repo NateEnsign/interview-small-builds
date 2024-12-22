@@ -1,6 +1,7 @@
 import React from "react";
 import "./ToDo.css";
 import ToDoList from "./ToDoList";
+import NewToDo from "./NewToDo";
 
 const ToDo = () => {
   const toDoItems = [
@@ -12,6 +13,7 @@ const ToDo = () => {
   return (
     <div>
       <h1 className="to-do-header">To Do List</h1>
+      <NewToDo />
       <ToDoList listItems={toDoItems} />
     </div>
   );
