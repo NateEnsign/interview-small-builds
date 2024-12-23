@@ -11,14 +11,23 @@ const BooksRead = () => {
     ])
 
     const addNewBookHandler = (nextBook) => {
-        setCompletedBooks(completedBooks.concat(nextBook))
+        setCompletedBooks((prevCompletedBooks => [
+          ...prevCompletedBooks,
+          nextBook,
+        ]
+        ))
+    }
+
+    const deleteBookHandler = (bookId) => {
+      setCompletedBooks((prevCompletedBooks) => 
+      prevCompletedBooks.filter((book) => book.id !== bookId))
     }
 
   return (
     <div>
         <h1 className='books-read-header'>Books I have Read</h1>
         <NewBook additionalBook={addNewBookHandler} />
-        <BookList books={completedBooks} />
+        <BookList books={completedBooks} onDeleteBook={deleteBookHandler} />
         
     </div>
   )

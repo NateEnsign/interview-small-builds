@@ -7,9 +7,9 @@ import BooksRead from "./components/books-app/BooksRead";
 function App() {
   return (
     <>
+      <GoalsApp />
       <BooksRead />
       <GirlsKissed />
-      <GoalsApp />
       <ToDo />
     </>
   );
