@@ -17,7 +17,7 @@ const ToDo = () => {
   const deleteTaskHandler = (taskId) => {
     setTaskList((prevTaskList) =>
       prevTaskList.filter((task) => task.id !== taskId)
-    );
+    )
   };
 
   return (
