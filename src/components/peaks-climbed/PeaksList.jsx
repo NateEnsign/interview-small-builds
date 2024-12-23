@@ -1,7 +1,7 @@
 import React from 'react';
 import './PeakList.css';
 
-const PeaksList = ({summits, addPeak}) => {
+const PeaksList = ({summits, deletePeak}) => {
  
 
   return (
@@ -10,7 +10,7 @@ const PeaksList = ({summits, addPeak}) => {
            {summits.map(({id,peak}) => 
             <li key={id}>
                 <span>{peak}</span>
-                <button>Delete</button>
+                <button onClick={() => deletePeak(id) }>Delete</button>
             </li>
            )}
         </ul>

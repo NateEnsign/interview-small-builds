@@ -17,11 +17,15 @@ const PeaksClimbed = () => {
         ])
     }
 
+    const deletePeakHandler = (peakId) => {
+        setSummits((prevSummits) => prevSummits.filter((peak) => peak.id !== peakId))
+    }
+
   return (
     <div>
         <h1 className='peak-header'>Peaks I have Climbed</h1>
         <NewPeak addPeak={addPeakHandler} />
-        <PeaksList summits={summits} />
+        <PeaksList summits={summits} deletePeak={deletePeakHandler} />
     </div>
   )
 }
