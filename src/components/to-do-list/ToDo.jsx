@@ -11,15 +11,20 @@ const ToDo = () => {
   ]);
 
   const addNewTaskHandler = (newTask) => {
-    setTaskList(taskList.concat(newTask))
-  }
+    setTaskList((prevTaskList) => [...prevTaskList, newTask]);
+  };
 
+  const deleteTaskHandler = (taskId) => {
+    setTaskList((prevTaskList) =>
+      prevTaskList.filter((task) => task.id !== taskId)
+    );
+  };
 
   return (
     <div>
       <h1 className="to-do-header">To Do List</h1>
       <NewToDo onAddTask={addNewTaskHandler} />
-      <ToDoList listItems={taskList} />
+      <ToDoList listItems={taskList} deleteTask={deleteTaskHandler} />
     </div>
   );
 };
