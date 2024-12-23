@@ -1,13 +1,16 @@
 import React from "react";
 import './KissedList.css';
 
-const KissedList = ({ kissedList }) => {
+const KissedList = ({ girls, onDeleteGirl }) => {
   return (
     <div>
       <ul className="kissed-list">
-        {kissedList.map((girl) => {
-          return <li key={girl.id}>{girl.name}</li>;
-        })}
+       {girls.map(({id, name}) => {
+        return <li key={id}>
+          <span>{name}</span>
+          <button onClick={() => onDeleteGirl(id)}>Delete</button>
+        </li>
+       })}
       </ul>
     </div>
   );

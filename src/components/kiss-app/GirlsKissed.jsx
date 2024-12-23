@@ -13,14 +13,23 @@ const GirlsKissed = () => {
     ])
 
     const addGirlHandler = (newGirl) => {
-        setGirlsKissed(girlsKissed.concat(newGirl))
+      setGirlsKissed((prevGirlsKissed => [
+        ...prevGirlsKissed,
+        newGirl,
+      ]))
+    }
+
+    const deleteGirlHandler = (girlId) => {
+      setGirlsKissed((prevGirlsKissed) => 
+        prevGirlsKissed.filter((girl) => girl.id !== girlId)
+      )
     }
 
   return (
     <div>
         <h1 className='kissed-header'>Girls Kissed in 2024</h1>
         <NewGirl addGirl={addGirlHandler} />
-        <KissedList kissedList={girlsKissed} />
+        <KissedList girls={girlsKissed} onDeleteGirl={deleteGirlHandler} />
     </div>
   )
 }
