@@ -17,11 +17,15 @@ const PlacesTraveled = () => {
         ])
     }
 
+    const handleDeleteCountry = (countryId) => {
+        setCountries((prevCountries) => prevCountries.filter((country) => country.id !== countryId))
+    }
+
   return (
     <div>
         <h1 className='places-header'>Places I have Traveled</h1>
         <NewPlace addCountry={handleAddNewCountry} />
-        <PlaceList countries={countries} />
+        <PlaceList countries={countries} deleteCountry={handleDeleteCountry} />
     </div>
   )
 }
