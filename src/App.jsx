@@ -9,9 +9,9 @@ import PlacesTraveled from "./components/travel-app/PlacesTraveled";
 function App() {
   return (
     <>
+      <GoalsApp />
       <PlacesTraveled />
       <PeaksClimbed />
-      <GoalsApp />
       <BooksRead />
       <GirlsKissed />
       <ToDo />
