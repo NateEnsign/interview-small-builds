@@ -1,21 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './NewBook.css';
 
 const NewBook = ({additionalBook}) => {
+    const [textInput,setTextInput] = useState('');
+
     const submitHandler = (event) => {
         event.preventDefault();
 
         const nextBook = {
             id: Math.random().toString(),
-            book: 'Heart of Darkness',
+            book: textInput,
         }
+
+        setTextInput('');
         additionalBook(nextBook);
+    }
+
+    const handleTextChange = (event) => {
+        setTextInput(event.target.value);
     }
 
   return (
     <div>
         <form className='book-form' onSubmit={submitHandler}>
-            <input type="text" />
+            <input type="text" value={textInput} onChange={handleTextChange} />
             <button>Add Book</button>
         </form>
     </div>
