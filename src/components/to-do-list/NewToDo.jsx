@@ -1,25 +1,32 @@
-import React from 'react'
-import './NewToDo.css';
+import React, { useState } from "react";
+import "./NewToDo.css";
 
-const NewToDo = ({onAddTask}) => {
-    const addTaskHandler = (event) => {
-        event.preventDefault();
+const NewToDo = ({ onAddTask }) => {
+  const [inputText, setInputText] = useState("");
 
-        const newTask = {
-            id: Math.random().toString(),
-            text: 'Make out with an Asian chick',
-        }
-            onAddTask(newTask);
-    }
+  const addTaskHandler = (event) => {
+    event.preventDefault();
+
+    const newTask = {
+      id: Math.random().toString(),
+      text: inputText,
+    };
+    setInputText('');
+    onAddTask(newTask);
+  };
+
+  const changeTextHandler = (event) => {
+    setInputText(event.target.value);
+  };
 
   return (
     <div>
-        <form className='new-task' onSubmit={addTaskHandler}>
-            <input type="text" />
-            <button type='submit'>Add Task</button>
-        </form>
+      <form className="new-task" onSubmit={addTaskHandler}>
+        <input type="text" value={inputText} onChange={changeTextHandler} />
+        <button type="submit">Add Task</button>
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default NewToDo
+export default NewToDo;
