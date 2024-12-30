@@ -1,4 +1,5 @@
 import React from 'react'
+import './CountryList.css';
 
 const CountryList = ( {countryList }) => {
   return (
