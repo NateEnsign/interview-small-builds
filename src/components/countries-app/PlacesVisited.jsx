@@ -11,17 +11,24 @@ const PlacesVisited = () => {
   ]);
 
   const onAddCountry = (newCountry) => {
-    setCountries((prevCountries => [
-      ...prevCountries,
-      newCountry,
-    ]))
+    setCountries((prevCountries) => {
+      return [...prevCountries,newCountry]
+    })
+  }
+
+  const onDeleteCountry = (countryId) => {
+    setCountries((prevCountries) => {
+      return prevCountries.filter((country) => {
+        return country.id !== countryId
+      })
+    })
   }
 
   return (
     <div>
       <h1 className="countries-header">Countries I have Visited</h1>
       <NewCountry addCountry={onAddCountry} />
-      <CountryList countryList={countries} />
+      <CountryList countryList={countries} deleteCountry={onDeleteCountry} />
     </div>
   );
 };

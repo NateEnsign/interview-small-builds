@@ -1,7 +1,7 @@
 import React from 'react'
 import './CountryList.css';
 
-const CountryList = ( {countryList }) => {
+const CountryList = ( {countryList, deleteCountry }) => {
   return (
     <div>
         <ul className='country-list'>
@@ -9,7 +9,7 @@ const CountryList = ( {countryList }) => {
                 countryList.map(country => {
                     return <li key={country.id}>
                         <span>{country.name}</span>
-                        <button>Delete</button>
+                        <button onClick={() => deleteCountry(country.id)}>Delete</button>
                     </li>
                 })
             }
