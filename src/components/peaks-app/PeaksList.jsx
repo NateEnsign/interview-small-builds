@@ -2,14 +2,14 @@ import React from "react";
 
 import './PeaksList.css';
 
-const PeaksList = ({ peaks }) => {
+const PeaksList = ({ peaks, deletePeak }) => {
   return (
     <ul className="peak-list">
       {peaks.map((peak) => {
         return (
           <li key={peak.id}>
             <span>{peak.name}</span>
-            <button>Delete</button>
+            <button onClick={() => deletePeak(peak.id)}>Delete</button>
           </li>
         );
       })}

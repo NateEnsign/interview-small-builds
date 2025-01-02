@@ -17,11 +17,17 @@ const PeaksClimbed = () => {
     });
   };
 
+  const deletePeakHandler = (peakId) => {
+    setPeaksSummited((prevPeaksSummited) => {
+        return prevPeaksSummited.filter(peaks => peaks.id !== peakId)
+    })
+  }
+
   return (
     <div>
       <h1 className="peaks-header">Peaks I have Summited</h1>
       <NewPeak addPeak={addPeakHandler} />
-      <PeaksList peaks={peaksSummited} />
+      <PeaksList peaks={peaksSummited} deletePeak={deletePeakHandler} />
     </div>
   );
 };
