@@ -7,7 +7,7 @@ const PeaksList = ({ peaks }) => {
     <ul className="peak-list">
       {peaks.map((peak) => {
         return (
-          <li>
+          <li key={peak.id}>
             <span>{peak.name}</span>
             <button>Delete</button>
           </li>
