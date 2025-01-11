@@ -2,15 +2,15 @@ import React from "react";
 
 import "./BookList.css";
 
-const BookList = ({ books }) => {
+const BookList = ({ books, deleteBook }) => {
   return (
     <ul className="book-list">
-      {books.map((b) => {
+      {books.map(({title, pages, id}) => {
         return (
           <li>
-            <div>{b.title}</div>
-            <div>{b.pages}</div>
-            <button>Delete</button>
+            <div>{title}</div>
+            <div>{pages}</div>
+            <button onClick={() => deleteBook(id)}>Delete</button>
           </li>
         );
       })}

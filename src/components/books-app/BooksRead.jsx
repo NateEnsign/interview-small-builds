@@ -18,11 +18,17 @@ const BooksRead = () => {
     })
   }
 
+  const onDeleteBook = (bookId) => {
+    setBooksData((prevBookData) => {
+        return prevBookData.filter((book) => book.id !== bookId)
+    })
+  }
+
   return (
     <>
       <h1 className="books-header">Books I have read</h1>
       <NewBook addBook={onAddNewBook} />
-      <BookList books={bookData} />
+      <BookList books={bookData} deleteBook={onDeleteBook} />
     </>
   );
 };
