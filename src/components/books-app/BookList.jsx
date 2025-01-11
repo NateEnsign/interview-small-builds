@@ -1,9 +1,21 @@
-import React from 'react'
+import React from "react";
 
-const BookList = () => {
+import "./BookList.css";
+
+const BookList = ({ books }) => {
   return (
-    <div>BookList</div>
-  )
-}
+    <ul className="book-list">
+      {books.map((b) => {
+        return (
+          <li>
+            <div>{b.title}</div>
+            <div>{b.pages}</div>
+            <button>Delete</button>
+          </li>
+        );
+      })}
+    </ul>
+  );
+};
 
-export default BookList
+export default BookList;
