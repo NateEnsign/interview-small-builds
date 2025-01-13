@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import NewBook from "./NewBook";
 import BookList from "./BookList";
 import "./BooksRead.css";
 
@@ -16,9 +17,14 @@ const BooksRead = () => {
     );
   };
 
+  const addBookHandler  = (bookData) => {
+    setBooksRead(prevBooksRead => [...prevBooksRead, bookData])
+  }
+
   return (
     <>
       <h1 className="books-header">Books I have Read</h1>
+      <NewBook addBook={addBookHandler} />
       <BookList books={booksRead} deleteBook={deleteBookHandler} />
     </>
   );
