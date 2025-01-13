@@ -1,18 +1,18 @@
 import React from "react";
 
+import './BookList.css';
+
 const BookList = ({ books, deleteBook }) => {
   return (
-    <ul>
-      <li>
+    <ul className="book-list">
         {books.map(({ title, id }) => {
           return (
-            <div>
+            <li key={id}>
               <span>{title}</span>
               <button onClick={() => deleteBook(id)}>Delete</button>
-            </div>
+            </li>
           );
         })}
-      </li>
     </ul>
   );
 };
