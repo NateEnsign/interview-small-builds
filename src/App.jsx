@@ -4,12 +4,12 @@ import ToDo from "./components/to-do-list/toDo";
 import GirlsKissed from "./components/kiss-app/GirlsKissed";
 import PlacesVisited from "./components/countries-app/PlacesVisited";
 import PeaksClimbed from "./components/peaks-app/PeaksClimbed";
-import BooksApp from "./components/books-app/BooksApp";
+import BooksRead from "./components/book-app/BooksRead";
 
 function App() {
   return (
     <>
-      <BooksApp />
+      <BooksRead />
       <PeaksClimbed />
       <GirlsKissed />
       <PlacesVisited />
