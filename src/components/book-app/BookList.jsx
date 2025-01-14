@@ -1,11 +1,13 @@
 import React from 'react'
 
-const BookList = ({books}) => {
+import './BookList.css';
+
+const BookList = ({books, deleteBook}) => {
   return (
-    <ul>
+    <ul className='book-list'>
         {books.map(({id, title}) => <li>
             <span>{title}</span>
-            <button>Delete</button>
+            <button onClick={() => deleteBook(id)}>Delete</button>
         </li>)}
     </ul>
   )
