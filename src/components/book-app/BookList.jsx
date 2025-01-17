@@ -1,13 +1,14 @@
 import React from 'react'
 
-const BookList = ({books}) => {
+const BookList = ({books, deleteBook}) => {
+
   return (
     <ul>
         {books.map(({id, title}) => {
             return (
                 <li key={id}>
                     <span>{title}</span>
-                    <button>Delete</button>
+                    <button onClick={() => deleteBook(id)} >Delete</button>
                 </li>
             )
         })}

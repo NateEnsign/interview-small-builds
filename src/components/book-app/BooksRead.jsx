@@ -9,12 +9,15 @@ const BooksRead = () => {
         {id: 'b3', title: 'A picture of Dorian Grey'}
     ])
 
+    const handleDeleteBook = (bookId) => {
+        setBookData(prevBookData => prevBookData.filter((b) => b.id !== bookId))
+    }
 
 
   return (
     <div>
         <h1>Books I have read</h1>
-        <BookList books={bookData} />
+        <BookList books={bookData} deleteBook={handleDeleteBook} />
     </div>
   )
 }
