@@ -15,11 +15,15 @@ const BooksRead = () => {
         setBookData(prevBookData => prevBookData.filter((b) => b.id !== bookId))
     }
 
+    const handleNewBook = (additionalBook) => {
+        setBookData(prevBookData => [...prevBookData, additionalBook])
+    }
+
 
   return (
     <div>
         <h1 className='books-header'>Books I have read</h1>
-        <NewBook />
+        <NewBook newBook={handleNewBook} />
         <BookList books={bookData} deleteBook={handleDeleteBook} />
     </div>
   )
