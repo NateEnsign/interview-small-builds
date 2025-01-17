@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
 import BookList from './BookList'
+import './BooksRead.css';
 
 const BooksRead = () => {
     const [bookData, setBookData] = useState([
@@ -16,7 +17,7 @@ const BooksRead = () => {
 
   return (
     <div>
-        <h1>Books I have read</h1>
+        <h1 className='books-header'>Books I have read</h1>
         <BookList books={bookData} deleteBook={handleDeleteBook} />
     </div>
   )

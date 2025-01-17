@@ -1,9 +1,11 @@
 import React from 'react'
 
+import './BookList.css';
+
 const BookList = ({books, deleteBook}) => {
 
   return (
-    <ul>
+    <ul className='book-list'>
         {books.map(({id, title}) => {
             return (
                 <li key={id}>
