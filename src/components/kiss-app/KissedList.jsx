@@ -1,19 +1,16 @@
-import React from "react";
+import React from 'react'
+
 import './KissedList.css';
 
-const KissedList = ({ girls, onDeleteGirl }) => {
+const KissedList = ({data, deleteGirl}) => {
   return (
-    <div>
-      <ul className="kissed-list">
-       {girls.map(({id, name}) => {
-        return <li key={id}>
-          <span>{name}</span>
-          <button onClick={() => onDeleteGirl(id)}>Delete</button>
-        </li>
-       })}
-      </ul>
-    </div>
-  );
-};
+    <ul className='kissed-list'>
+        {data.map(({id,name}) => <li key={id}>
+            <span>{name}</span>
+            <button onClick={() => deleteGirl(id)}>Delete</button>
+        </li>)}
+    </ul>
+  )
+}
 
-export default KissedList;
+export default KissedList

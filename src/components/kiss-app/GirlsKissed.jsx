@@ -1,37 +1,28 @@
-import React, {useState } from 'react';
-import KissedList from './KissedList';
-import NewGirl from './NewGirl';
-import './GirlsKissed.css';
+import React, { useState } from "react";
+
+import KissedList from "./KissedList";
+
+import "./GirlsKissed.css";
 
 const GirlsKissed = () => {
-    const [girlsKissed,setGirlsKissed] = useState([
-        {id: 'gk1', name: 'Mykala Steadman'},
-        {id: 'gk2', name: 'Megan Bolton'},
-        {id: 'gk3', name: 'Sarah Wittmeyer'},
-        {id: 'gk4', name: 'Kacey Savage'},
-        {id: 'gk5', name: 'Hilma Povanhu'},
-    ])
+  const [kissedData, setKissedData] = useState([
+    { id: "g1", name: "Mykala Steadman" },
+    { id: "g2", name: "Sarah Pothead" },
+    { id: "g3", name: "Meagan Bolton" },
+    { id: "g4", name: "Kacey Savage" },
+    { id: "g5", name: "Hilma Povanhu" },
+  ]);
 
-    const addGirlHandler = (newGirl) => {
-      setGirlsKissed((prevGirlsKissed => [
-        ...prevGirlsKissed,
-        newGirl,
-      ]))
-    }
-
-    const deleteGirlHandler = (girlId) => {
-      setGirlsKissed((prevGirlsKissed) => 
-        prevGirlsKissed.filter((girl) => girl.id !== girlId)
-      )
-    }
+  const handleDeleteGilr = (girlId) => {
+    setKissedData(prevKissedData => prevKissedData.filter((girl) => girl.id !== girlId))
+  }
 
   return (
     <div>
-        <h1 className='kissed-header'>Girls Kissed in 2024</h1>
-        <NewGirl addGirl={addGirlHandler} />
-        <KissedList girls={girlsKissed} onDeleteGirl={deleteGirlHandler} />
+      <h1 className="kissed-header">Girls I have kissed in 2024</h1>
+      <KissedList data={kissedData} deleteGirl={handleDeleteGilr} />
     </div>
-  )
-}
+  );
+};
 
-export default GirlsKissed
+export default GirlsKissed;
