@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import KissedList from "./KissedList";
+import NewGirl from "./NewGirl";
 
 import "./GirlsKissed.css";
 
@@ -13,14 +14,19 @@ const GirlsKissed = () => {
     { id: "g5", name: "Hilma Povanhu" },
   ]);
 
-  const handleDeleteGilr = (girlId) => {
+  const handleDeleteGirl = (girlId) => {
     setKissedData(prevKissedData => prevKissedData.filter((girl) => girl.id !== girlId))
+  }
+
+  const handleAddGirl = (newData) => {
+    setKissedData((prevKissedData) => [...prevKissedData, newData])
   }
 
   return (
     <div>
       <h1 className="kissed-header">Girls I have kissed in 2024</h1>
-      <KissedList data={kissedData} deleteGirl={handleDeleteGilr} />
+      <NewGirl addGirl={handleAddGirl} />
+      <KissedList data={kissedData} deleteGirl={handleDeleteGirl} />
     </div>
   );
 };
