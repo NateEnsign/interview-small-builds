@@ -14,7 +14,7 @@ const TopMovies = () => {
   return (
     <div>
         <h1 className='movie-header'>Favorite Movies I have Seen</h1>
-        <MovieList />
+        <MovieList movies={movieData} />
     </div>
   )
 }

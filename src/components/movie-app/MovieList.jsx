@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
 
-const MovieList = () => {
+const MovieList = ({ movies }) => {
   return (
-    <div>MovieList</div>
-  )
-}
+    <ul>
+      {movies.map(({ id, title }) => {
+        return (
+          <li key={id}>
+            <span>{title}</span>
+            <button>Delete</button>
+          </li>
+        );
+      })}
+    </ul>
+  );
+};
 
-export default MovieList
+export default MovieList;
