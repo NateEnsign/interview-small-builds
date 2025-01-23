@@ -35,8 +35,14 @@ a {
     padding: 0; /* Reset padding */
     margin: 0; /* Reset margin */
   }
+
+.nav-list a {
+    font-size: 16px;
+    padding: 3px;
+    transition: ease-in;
+    display: inline-block;
+}
   
-  .nav-list li {
-    font-size: 16px; /* Adjust nav font size */
-  }
-  
+.nav-list a:hover {
+    transform: scale(1.1); /* Scales the link slightly */
+}
