@@ -11,10 +11,14 @@ const TopMovies = () => {
         {id: 'm4', title: 'Get Smart'}
     ])
 
+    const handleDeleteMovie = (movieId) => {
+        setMovieData(prevMovieData => prevMovieData.filter(movie => movie.id !== movieId))
+    }
+
   return (
     <div>
         <h1 className='movie-header'>Favorite Movies I have Seen</h1>
-        <MovieList movies={movieData} />
+        <MovieList movies={movieData} deleteMovie={handleDeleteMovie} />
     </div>
   )
 }
