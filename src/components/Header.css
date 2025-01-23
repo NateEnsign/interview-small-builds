@@ -46,3 +46,10 @@ a {
 .nav-list a:hover {
     transform: scale(1.1); /* Scales the link slightly */
 }
+
+.nav-list a.active {
+    background-color: #e9e5e5;
+    /* font-weight: bold; */
+    border-radius: 5px;
+  }
+

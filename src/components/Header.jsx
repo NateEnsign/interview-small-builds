@@ -12,22 +12,22 @@ const Header = () => {
       <nav className="header-nav">
         <ul className="nav-list">
           <li>
-            <NavLink to="/girls">Girls Kissed</NavLink>
+            <NavLink to="/girls" activeClassName="active">Girls Kissed</NavLink>
           </li>
           <li>
-            <NavLink to="/books">Books Read</NavLink>
+            <NavLink to="/books" activeClassName="active">Books Read</NavLink>
           </li>
           <li>
-            <NavLink to="/peaks">Peaks Climbed</NavLink>
+            <NavLink to="/peaks" activeClassName="active">Peaks Climbed</NavLink>
           </li>
           <li>
-            <NavLink to="/places">Places Visited</NavLink>
+            <NavLink to="/places" activeClassName="active">Places Visited</NavLink>
           </li>
           <li>
-            <NavLink to="/goals">Goals</NavLink>
+            <NavLink to="/goals" activeClassName="active">Goals</NavLink>
           </li>
           <li>
-            <NavLink to="/chores">To Do</NavLink>
+            <NavLink to="/chores" activeClassName="active">To Do</NavLink>
           </li>
         </ul>
       </nav>
