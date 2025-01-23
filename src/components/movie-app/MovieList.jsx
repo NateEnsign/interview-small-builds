@@ -1,8 +1,10 @@
 import React from "react";
 
+import './MovieList.css';
+
 const MovieList = ({ movies }) => {
   return (
-    <ul>
+    <ul className="movie-list">
       {movies.map(({ id, title }) => {
         return (
           <li key={id}>
