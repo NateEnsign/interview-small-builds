@@ -16,10 +16,14 @@ const TopMovies = () => {
         setMovieData(prevMovieData => prevMovieData.filter(movie => movie.id !== movieId))
     }
 
+    const handleAddMovie = (newMovie) => {
+        setMovieData(prevMovieData => [...prevMovieData, newMovie])
+    }
+
   return (
     <div>
         <h1 className='movie-header'>Favorite Movies I have Seen</h1>
-        <NewMovie />
+        <NewMovie addMovie={handleAddMovie} />
         <MovieList movies={movieData} deleteMovie={handleDeleteMovie} />
     </div>
   )
