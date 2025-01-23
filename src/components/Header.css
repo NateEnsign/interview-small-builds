@@ -1,0 +1,42 @@
+
+a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Style the header */
+  .site-header {
+    display: flex; /* Enable Flexbox */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 100px; /* Adjust height to your preference */
+    background-color: #f4f4f4; /* Optional background color */
+    padding: 0 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  }
+  
+  /* Style the title */
+  .header-title {
+    margin: 0; /* Remove default margin */
+    font-size: 24px; /* Adjust title font size */
+    text-align: center;
+  }
+  
+  /* Style the navigation */
+  .header-nav {
+    margin-top: 10px; /* Space between title and nav */
+  }
+  
+  .nav-list {
+    display: flex; /* Arrange nav links horizontally */
+    gap: 15px; /* Space between nav links */
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Reset padding */
+    margin: 0; /* Reset margin */
+  }
+  
+  .nav-list li {
+    font-size: 16px; /* Adjust nav font size */
+  }
+  

@@ -1,14 +1,16 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 
+import './Header.css';
+
 const Header = () => {
   return (
-    <header>
-      <h1>
-        <Link to="/">Skill Development Zone</Link>
+    <header className="site-header">
+      <h1 className="header-title">
+        <Link to="/" className="site-title">Skill Development Zone</Link>
       </h1>
-      <nav>
-        <ul>
+      <nav className="header-nav">
+        <ul className="nav-list">
           <li>
             <NavLink to="/girls">Girls Kissed</NavLink>
           </li>

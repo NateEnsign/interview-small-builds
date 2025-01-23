@@ -9,7 +9,7 @@ import PeaksClimbed from "./components/peaks-app/PeaksClimbed";
 import BooksRead from "./components/book-app/BooksRead";
 import GirlsKissed from "./components/kiss-app/GirlsKissed";
 import LandingPage from "./pages/LandingPage";
-import Header from "./Header";
+import Header from "./components/Header";
 
 function App() {
   return (
