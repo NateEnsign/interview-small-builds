@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 
+import NewMovie from './NewMovie';
 import MovieList from './MovieList';
 import './TopMovies.css';
 
@@ -18,6 +19,7 @@ const TopMovies = () => {
   return (
     <div>
         <h1 className='movie-header'>Favorite Movies I have Seen</h1>
+        <NewMovie />
         <MovieList movies={movieData} deleteMovie={handleDeleteMovie} />
     </div>
   )
