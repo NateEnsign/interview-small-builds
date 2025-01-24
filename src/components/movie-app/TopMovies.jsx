@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import MovieList from "./MovieList";
 import "./TopMovies.css";
 
-const TopMovies = () => {
+const TopMovies = (movieId) => {
   const [movieData, setMovieData] = useState([
     { id: "m1", title: "Hacksaw Ridge" },
     { id: "m2", title: "Remember the Titans" },
@@ -12,10 +12,16 @@ const TopMovies = () => {
     { id: "m5", title: "Hot Rod" },
   ]);
 
+  const deleteMovieHandler = (movieId) => {
+    setMovieData((prevMovieData) =>
+      prevMovieData.filter((movie) => movie.id !== movieId)
+    );
+  };
+
   return (
     <div>
       <h1 className="movie-header">My Favorite Movies</h1>
-      <MovieList movies={movieData} />
+      <MovieList movies={movieData} deleteMovie={deleteMovieHandler} />
     </div>
   );
 };

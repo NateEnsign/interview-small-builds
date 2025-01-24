@@ -2,7 +2,7 @@ import React from "react";
 
 import "./MovieList.css";
 
-const MovieList = ({ movies }) => {
+const MovieList = ({ movies, deleteMovie }) => {
   return (
     <div>
       <ul className="movie-list">
@@ -10,7 +10,7 @@ const MovieList = ({ movies }) => {
           return (
             <li key={id}>
               <span>{title}</span>
-              <button>Delete</button>
+              <button onClick={() => deleteMovie(id) }>Delete</button>
             </li>
           );
         })}
