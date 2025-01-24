@@ -19,10 +19,14 @@ const TopMovies = (movieId) => {
     );
   };
 
+  const addMovieHandler = (newMovie) => {
+    setMovieData(prevMovieData => [...prevMovieData, newMovie])
+  }
+
   return (
     <div>
       <h1 className="movie-header">My Favorite Movies</h1>
-      <NewMovie />
+      <NewMovie addMovie={addMovieHandler} />
       <MovieList movies={movieData} deleteMovie={deleteMovieHandler} />
     </div>
   );

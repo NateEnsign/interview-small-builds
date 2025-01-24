@@ -2,17 +2,28 @@ import React, {useState} from 'react'
 
 import './NewMovie.css';
 
-const NewMovie = () => {
+const NewMovie = ({addMovie}) => {
     const [textInput, setTextInput] = useState('')
 
     const inputHandler = (event) => {
-        setTextInput(event.targe.value)
+        setTextInput(event.target.value)
+    }
+
+    const submitHandler = (event) => {
+        event.preventDefault();
+
+        const newMovie = {
+            id: Math.random().toString(),
+            title: textInput,
+        };
+        addMovie(newMovie);
+        setTextInput('');
     }
 
   return (
-    <form className='movie-form'>
+    <form className='movie-form' onSubmit={submitHandler}>
         <input type="text" value={textInput} onChange={inputHandler} />
-       <button>Add Movie</button>
+       <button type='submit'>Add Movie</button>
     </form>
   )
 }
