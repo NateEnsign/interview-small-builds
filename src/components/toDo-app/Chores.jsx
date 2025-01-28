@@ -10,10 +10,15 @@ const Chores = () => {
         {id: 'c3', title: 'Make something crazy good for dinner'},
     ])
 
+
+    const handleDeleteChore = (choreId) => {
+        setChores(prevChores => prevChores.filter(chore => chore.id !== choreId)) 
+    }
+
   return (
     <div>
         <h1 className='chores-header'>To do List</h1>
-        <ChoreList chores={chores} />
+        <ChoreList chores={chores} deleteChore={handleDeleteChore} />
     </div>
   )
 }
