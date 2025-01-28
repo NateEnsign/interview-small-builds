@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 
+import NewChore from './NewChore';
 import ChoreList from './ChoreList';
 import './Chores.css';
 
@@ -15,9 +16,14 @@ const Chores = () => {
         setChores(prevChores => prevChores.filter(chore => chore.id !== choreId)) 
     }
 
+    const handleAddchore = (newChore) => {
+        setChores(prevChores => [...prevChores, newChore])
+    }
+
   return (
     <div>
         <h1 className='chores-header'>To do List</h1>
+        <NewChore addChore={handleAddchore} />
         <ChoreList chores={chores} deleteChore={handleDeleteChore} />
     </div>
   )
