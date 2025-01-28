@@ -1,9 +1,0 @@
-.to-do-header {
-    text-align: center;
-}
-
-.daily-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
