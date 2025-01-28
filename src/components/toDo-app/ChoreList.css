@@ -1,0 +1,14 @@
+.chore-list {
+    list-style-type: none;
+    margin: 2rem 5rem;
+    padding: 0;
+}
+
+.chore-list li {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
