@@ -15,9 +15,14 @@ const GoalsApp = () => {
     setGoals(prevGoals => prevGoals.filter(goal => goal.id !== goalId))
   }
 
+  const addGoalHandler = (newData) => {
+    setGoals(prevGoals => [...prevGoals, newData])
+  }
+
   return (
     <div>
-      <NewGoal />
+      <h1 className='goals-header'>Goals</h1>
+      <NewGoal addGoal={addGoalHandler} />
       <GoalList goalData={goals} deleteGoal={deleteHandler} />
     </div>
   );

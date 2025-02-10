@@ -17,6 +17,7 @@ const NewChore = ({addChore}) => {
             title: inputData,
         }
         addChore(newChore);
+        setInputData('');
     }
 
   return (

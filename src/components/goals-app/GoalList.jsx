@@ -4,7 +4,7 @@ import "./GoalList.css";
 const GoalList = ({ goalData, deleteGoal }) => {
   return (
     <ul className="goal-list">
-      {goalData.map(({ goal, id }) => {
+      {goalData.map(({id, goal}) => {
         return (
           <li key={id}>
             <span>{goal}</span>
