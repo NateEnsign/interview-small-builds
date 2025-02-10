@@ -1,16 +1,19 @@
-import React from 'react'
-import './GoalList.css';
+import React from "react";
+import "./GoalList.css";
 
-const GoalList = ({goals}) => {
+const GoalList = ({ goalData }) => {
   return (
-    <div>
-        <ul className='goal-list'>
-           {goals.map(goal => {
-            return <li key={goal.id}>{goal.text}</li>
-           })}
-        </ul>
-    </div>
-  )
-}
+    <ul className="goal-list">
+      {goalData.map(({ goal, id }) => {
+        return (
+          <li key={id}>
+            <span>{goal}</span>
+            <button>Delete</button>
+          </li>
+        );
+      })}
+    </ul>
+  );
+};
 
-export default GoalList
+export default GoalList;
